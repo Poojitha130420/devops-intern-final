@@ -17,7 +17,36 @@ This repository documents and contains the artifacts for the DevOps Intern Final
 ---
 
 ## 2. How to Run/Test:
-# Make sure you are in the project root directory
-chmod +x scripts/sysinfo.sh
-./scripts/sysinfo.sh
+* Make sure you are in the project root directory
+* chmod +x scripts/sysinfo.sh
+* ./scripts/sysinfo.sh
+
+---
+
+
+## 4.How to Build and Run Locally
+* 1. Build the image
+docker build -t hello-devops:latest .
+
+* 2. Run the container
+docker run --rm hello-devops:latest
+** Expected Output: Hello, DevOps!
+
+---
+
+## 5. CI/CD with GitHub Actions
+* **Status:** Complete.
+* The `.github/workflows/ci.yml` file is configured to run `python hello.py` on every push to `main`. The status badge above reflects the latest build status.
+
+
+---
+
+
+## 6. How to Run on Nomad
+* Ensure your Nomad agent is running
+* Deploy the job
+nomad job run nomad/hello.nomad
+
+* Check the status
+nomad status hello-devops
 
